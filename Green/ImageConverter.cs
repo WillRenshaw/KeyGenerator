@@ -25,7 +25,7 @@ namespace MakeKey
             Image img = Image.FromFile(fname);
             byte[] byteArray = imageToByteArray(img);
            
-            
+            //this is a test.
             int totalPix = byteArray.Length;
             int divBy = 0;
             if (totalPix <= 1000)
