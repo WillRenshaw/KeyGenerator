@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Drawing;
-//Jack is useless
+//Jack is useless hahahah
 
 
 
@@ -22,13 +22,12 @@ namespace MakeKey
         static void Main(string[] args)
         {
             String fname = "E:\\Desktop\\Green\\green.png";
-            Bitmap img = new Bitmap(fname);
-            Image imger = Image.FromFile(fname);
-            int Height,Width, totalPix;
+            Image img = Image.FromFile(fname);
+            byte[] byteArray = imageToByteArray(img);
+           
+            
+            int totalPix = byteArray.Length;
             int divBy = 0;
-            Height = img.Height;
-            Width = img.Width;
-            totalPix = Height * Width;
             if (totalPix <= 1000)
             {
                 divBy = 1;
@@ -62,26 +61,9 @@ namespace MakeKey
                 divBy = 10000;
             }
 
-            Color[,] imgArray = new Color[Width,Height];
             String totalString =  "";
             String tempString;
 
-
-            /*for (int i = 0; i < img.Width; i++)
-            {
-                for (int j = 0; j < img.Height; j++)
-                {
-                    if (i % divBy == 0)
-                    {
-                        Color pixel = img.GetPixel(i, j);
-                        imgArray[i, j] = pixel;
-                        String tempString = ((pixel.R) + (pixel.G) + (pixel.B)).ToString("X");
-                        totalString += tempString;
-                    }
-                }
-            }*/
-            byte[] byteArray = imageToByteArray(imger);
-            Console.WriteLine("*");
             for (int i = 0; i < byteArray.Length; i++)
             {
                 if (i % divBy == 0)
