@@ -5,6 +5,10 @@ using System.Text;
 using System.IO;
 using System.Drawing;
 //Jack is useless
+
+
+
+
 namespace MakeKey
 {
     class ImageConverter
